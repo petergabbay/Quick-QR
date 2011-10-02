@@ -14,10 +14,23 @@
 #import "ArchiveController.h"
 #import "Database.h"
 #import "ScanViewController.h"
+#import "BarcodesAppDelegate.h"
 
 @implementation ZXMainViewController
 @synthesize actions;
 @synthesize result;
+
+
+static BarcodesAppDelegate *appDelegate;
+
++ (void)initialize {
+    [super initialize];
+    NSLog(@"initi");
+    appDelegate = (BarcodesAppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSLog(@"test");
+    BOOL test = appDelegate.justOpened;
+    NSLog(@"test is %d", test);
+}
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
@@ -35,8 +48,27 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.navigationItem.title = @"Barcodes";
+    NSLog(@"opend");
+    
+    appDelegate = (BarcodesAppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegate.mainView = self;
+    
+    NSLog(@"is %d", appDelegate.justOpened);
+    if (appDelegate.justOpened){
+        appDelegate.justOpened = NO;
+        NSLog(@"if1");
+        
+        [self scan:NULL];
+    }
+    
+
 }
 
+/*
+- (void)viewWillAppear:(BOOL)animated {
+
+}
+*/
 
 /*
 // Override to allow orientations other than the default portrait orientation.

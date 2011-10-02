@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class ZXMainViewController;
+
 @interface BarcodesAppDelegate : NSObject <UIApplicationDelegate> {
   UIWindow *window;
   UITabBarController *tabBarController;
@@ -16,5 +18,7 @@
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
+@property (nonatomic, retain) ZXMainViewController *mainView;
+@property (nonatomic, assign) BOOL justOpened;
 @end
 
