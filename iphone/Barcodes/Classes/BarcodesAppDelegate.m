@@ -24,7 +24,7 @@
     // Override point for customization after application launch.
   [self.window addSubview:tabBarController.view];
   [self.window makeKeyAndVisible];
-        NSLog(@"set");
+        // NSLog(@"set");
     self.justOpened = YES;
   
   return YES;
@@ -59,9 +59,10 @@
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
     
-    NSLog(@"reactivated");
+//    NSLog(@"reactivated");
     if (self.mainView != NULL){
-        NSLog(@"found");
+//        NSLog(@"found");
+        [self.mainView.prepareImage setHidden:NO];
         [self.mainView scan:NULL];
     }
 }

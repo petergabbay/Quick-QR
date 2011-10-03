@@ -19,17 +19,16 @@
 @implementation ZXMainViewController
 @synthesize actions;
 @synthesize result;
+@synthesize prepareImage;
 
 
 static BarcodesAppDelegate *appDelegate;
 
 + (void)initialize {
     [super initialize];
-    NSLog(@"initi");
     appDelegate = (BarcodesAppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSLog(@"test");
-    BOOL test = appDelegate.justOpened;
-    NSLog(@"test is %d", test);
+//    BOOL test = appDelegate.justOpened;
+//    NSLog(@"test is %d", test);
 }
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -48,16 +47,16 @@ static BarcodesAppDelegate *appDelegate;
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.navigationItem.title = @"Quick QR";
-    NSLog(@"opend");
-    
+//    NSLog(@"opend");
+    [prepareImage setHidden:YES];
     appDelegate = (BarcodesAppDelegate *)[[UIApplication sharedApplication] delegate];
     appDelegate.mainView = self;
     
-    NSLog(@"is %d", appDelegate.justOpened);
+//    NSLog(@"is %d", appDelegate.justOpened);
     if (appDelegate.justOpened){
         appDelegate.justOpened = NO;
-        NSLog(@"if1");
-        
+//        NSLog(@"if1");
+        [prepareImage setHidden:NO];
         [self scan:NULL];
     }
     
@@ -121,6 +120,7 @@ static BarcodesAppDelegate *appDelegate;
 }
 
 - (void)viewDidUnload {
+    [self setPrepareImage:nil];
   [super viewDidUnload];
   // Release any retained subviews of the main view.
   // e.g. self.myOutlet = nil;
@@ -130,12 +130,15 @@ static BarcodesAppDelegate *appDelegate;
 - (void)dealloc {
   actions = nil;
   result = nil;
+    [prepareImage release];
   [super dealloc];
 }
 
 #pragma mark -
 #pragma mark ZXingDelegateMethods
 - (void)zxingController:(ZXingWidgetController*)controller didScanResult:(NSString *)resultString {
+    //For QuickQR
+    [prepareImage setHidden:YES];
   [self dismissModalViewControllerAnimated:YES];
 #ifdef DEBUG  
   NSLog(@"result has %d actions", actions ? 0 : actions.count);
@@ -153,6 +156,7 @@ static BarcodesAppDelegate *appDelegate;
 }
 
 - (void)zxingControllerDidCancel:(ZXingWidgetController*)controller {
+    [prepareImage setHidden:YES];
   [self dismissModalViewControllerAnimated:YES];
 }
 

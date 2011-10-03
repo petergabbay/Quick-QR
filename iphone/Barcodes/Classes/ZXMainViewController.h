@@ -19,10 +19,12 @@
 @interface ZXMainViewController : UIViewController <ZXingDelegate,UIActionSheetDelegate,ModalViewControllerDelegate> {
   NSArray *actions;
   ParsedResult *result;
+    UIImageView *prepareImage;
 }
 
 @property (nonatomic,assign) NSArray *actions;
 @property (nonatomic,assign) ParsedResult *result;
+@property (nonatomic, retain) IBOutlet UIImageView *prepareImage;
 
 - (IBAction)scan:(id)sender;
 
