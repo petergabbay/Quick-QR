@@ -33,12 +33,17 @@
 			<string>com.artcentric.quickqr</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>quickqr</string>
+				<string>qrquick</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>ZxingLarge.png</string>
+		<string>ZxingLarge@2x.png</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSMainNibFile</key>
@@ -53,5 +58,7 @@
 	<array/>
 	<key>UTImportedTypeDeclarations</key>
 	<array/>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
 </dict>
 </plist>
