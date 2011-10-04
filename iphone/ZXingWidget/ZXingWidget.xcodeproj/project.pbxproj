@@ -401,7 +401,7 @@
 		3B81AAF7120F0A7E0022E5D4 /* GreyscaleRotatedLuminanceSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreyscaleRotatedLuminanceSource.h; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* ZXingWidget_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXingWidget_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		D2AAC07E0554694100DB518D /* libZXingWidget.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libZXingWidget.a; path = "/Users/peter/Projects/quick_qr/iphone/ZXingWidget/build/Release-iphoneos/libZXingWidget.a"; sourceTree = "<absolute>"; };
+		D00E5397143A810500E957CD /* libZXingWidget.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libZXingWidget.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E53458B511987396000CB77F /* BarcodeFormat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BarcodeFormat.cpp; sourceTree = "<group>"; };
 		E53458B611987396000CB77F /* BarcodeFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarcodeFormat.h; sourceTree = "<group>"; };
 		E53458B711987396000CB77F /* Binarizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Binarizer.cpp; sourceTree = "<group>"; };
@@ -569,6 +569,7 @@
 			isa = PBXGroup;
 			children = (
 				1D60398D13DF7CAD006F4B51 /* ZXingTests.octest */,
+				D00E5397143A810500E957CD /* libZXingWidget.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1158,7 +1159,7 @@
 			);
 			name = ZXingWidget;
 			productName = ZXingWidget;
-			productReference = D2AAC07E0554694100DB518D /* libZXingWidget.a */;
+			productReference = D00E5397143A810500E957CD /* libZXingWidget.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -1426,7 +1427,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				EXPORTED_SYMBOLS_FILE = exportList;
@@ -1457,7 +1458,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ZXingWidget_Prefix.pch;

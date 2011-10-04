@@ -46,7 +46,7 @@ static BarcodesAppDelegate *appDelegate;
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.navigationItem.title = @"Quick QR";
+  self.navigationItem.title = @"QR Quick";
 //    NSLog(@"opend");
     [prepareImage setHidden:YES];
     appDelegate = (BarcodesAppDelegate *)[[UIApplication sharedApplication] delegate];

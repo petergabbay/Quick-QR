@@ -35,7 +35,7 @@
 "Decoder MessageWhileDecoding" = "Décodage ...";
 
 /* ZXing */
-"DecoderViewController AppTitle" = "Quick QR";
+"DecoderViewController AppTitle" = "QR Quick";
 
 /* Cancel */
 "DecoderViewController cancel button title" = "Annuler";
